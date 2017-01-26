@@ -1,0 +1,22 @@
+{namespace poll=ZerosOnes\DoiPoll\ViewHelpers}
+<f:layout name="Default" />
+
+
+<f:section name="main">
+    <f:flashMessages />
+
+    <h2>{poll.title}</h2>
+
+    <f:for each="{poll.contents}" as="content">
+        <poll:renderContent contentUid="{content.uid}"></poll:renderContent>
+    </f:for>
+
+    <f:form action="voting" id="doipoll" name="doipoll" controller="Poll" method="post" arguments="{poll: poll}">
+        <f:for each="{poll.answers}" as="answer">
+            <f:form.radio value="{answer.uid}" id="PollRadio-{answer.uid}" name="answers"  />{answer.title}
+        </f:for>
+        <br/>
+        <input type="submit" value="submit"/>
+    </f:form>
+
+</f:section>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-26T12:47:23Z" product-name="doi_poll">
+		<header/>
+		<body>
+			<trans-unit id="tx_doipoll_domain_model_poll">
+				<source>Poll</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_poll.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_poll.answers">
+				<source>Answers</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_poll.voting">
+				<source>Voting</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_answers">
+				<source>Answers</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_answers.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_voting">
+				<source>Voting</source>
+			</trans-unit>
+			<trans-unit id="tx_doipoll_domain_model_voting.active">
+				<source>Active</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
