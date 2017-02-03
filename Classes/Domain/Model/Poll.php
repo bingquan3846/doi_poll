@@ -52,6 +52,14 @@ class Poll extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ZerosOnes\DoiPoll\Domain\Model\Answers>
      */
     protected $answers = null;
+
+
+    /**
+     * multiple
+     *
+     * @var boolean
+     */
+    protected $multiple = null;
     
     /**
      * voting
@@ -148,6 +156,24 @@ class Poll extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->answers = $answers;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isMultiple()
+    {
+        return $this->multiple;
+    }
+
+    /**
+     * @param boolean $multiple
+     */
+    public function setMultiple($multiple)
+    {
+        $this->multiple = $multiple;
+    }
+
+
 
     /**
      * @param Contents $content

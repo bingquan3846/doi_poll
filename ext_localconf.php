@@ -7,12 +7,12 @@ if (!defined('TYPO3_MODE')) {
 	'ZerosOnes.' . $_EXTKEY,
 	'Poll',
 	array(
-		'Poll' => 'show,voting',
+		'Poll' => 'show,voting,showResult,activate',
 		
 	),
 	// non-cacheable actions
 	array(
-		'Poll' => 'voting',
+		'Poll' => 'voting,show,showResult,activate',
 		'Answers' => '',
 		'Voting' => '',
 		

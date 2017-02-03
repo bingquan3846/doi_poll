@@ -10,6 +10,7 @@ CREATE TABLE tx_doipoll_domain_model_poll (
 	answers int(11) unsigned DEFAULT '0' NOT NULL,
 	answers int(11) unsigned DEFAULT '0' NOT NULL,
 	voting int(11) unsigned DEFAULT '0' NOT NULL,
+	multiple tinyint(4) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -155,4 +156,11 @@ CREATE TABLE tx_doipoll_poll_content_mm (
 
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
+);
+
+#
+# Table structure for table 'tt_content'
+#
+CREATE TABLE tt_content (
+  poll int(11) DEFAULT '0' NOT NULL,
 );

@@ -1,0 +1,18 @@
+{namespace poll=ZerosOnes\DoiPoll\ViewHelpers}
+<f:layout name="Default" />
+
+
+<f:section name="main">
+    <f:flashMessages />
+
+    <h2>{poll.title}</h2>
+
+    <f:for each="{poll.contents}" as="content">
+        <poll:renderContent contentUid="{content.uid}"></poll:renderContent>
+    </f:for>
+    <f:for each="{results}" as="result">
+        {result.answer.title}:{result.count}<br/>
+    </f:for>
+    <f:link.action action="show" arguments="{poll : poll}">back</f:link.action>
+
+</f:section>

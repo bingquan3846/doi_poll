@@ -7,6 +7,22 @@ plugin.tx_doipoll_poll {
 	}
 	persistence {
 		storagePid = {$plugin.tx_doipoll_poll.persistence.storagePid}
+
+		classes{
+			ZerosOnes\DoiPoll\Domain\Model\Voting{
+				mapping{
+					columns{
+						cruser_id.mapOnProperty = cruserId
+						answer.mapOnProperty = answer
+					}
+				}
+			}
+		}
+	}
+
+	settings{
+		send_email = {$plugin.tx_doipoll_poll.settings.send_email}
+		send_name = {$plugin.tx_doipoll_poll.settings.send_name}
 	}
 }
 

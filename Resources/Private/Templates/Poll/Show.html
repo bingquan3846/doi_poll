@@ -13,10 +13,21 @@
 
     <f:form action="voting" id="doipoll" name="doipoll" controller="Poll" method="post" arguments="{poll: poll}">
         <f:for each="{poll.answers}" as="answer">
-            <f:form.radio value="{answer.uid}" id="PollRadio-{answer.uid}" name="answers"  />{answer.title}
+            <f:if condition="{poll.multiple}">
+
+                <f:then>
+                    <f:form.checkbox value="{answer.uid}" multiple="true" name="answers" />{answer.title}
+                </f:then>
+                <f:else>
+                    <f:form.radio value="{answer.uid}" id="PollRadio-{answer.uid}" name="answers"  />{answer.title}
+                </f:else>
+            </f:if>
+
+
         </f:for>
         <br/>
         <input type="submit" value="submit"/>
+        <f:link.action action="showResult" arguments="{poll : poll}">Result</f:link.action>
     </f:form>
 
 </f:section>

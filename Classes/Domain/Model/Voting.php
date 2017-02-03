@@ -50,6 +50,11 @@ class Voting extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \ZerosOnes\DoiPoll\Domain\Model\Answers
      */
     protected $answer;
+
+    /**
+     * @var string
+     */
+    protected $cruserId;
     
     /**
      * Returns the active
@@ -113,6 +118,22 @@ class Voting extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPoll($poll)
     {
         $this->poll = $poll;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCruserId()
+    {
+        return $this->cruserId;
+    }
+
+    /**
+     * @param string $cruserId
+     */
+    public function setCruserId($cruserId)
+    {
+        $this->cruserId = $cruserId;
     }
 
 

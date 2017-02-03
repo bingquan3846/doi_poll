@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('doi_poll') . 'Resources/Public/Icons/tx_doipoll_domain_model_voting.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, active, answer',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, active, answer,cruser_id',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, active, answer --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, active, answer, cruser_id,  --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -131,13 +131,19 @@ return array(
 			),
 		),
 		'answer' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:doi_poll/Resources/Private/Language/locallang_db.xlf:tx_doipoll_domain_model_poll.answer',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'passthrough',
 			),
+		),
+		'cruser_id' => array(
+			'exclude' => 0,
+			'label'   => 'cruser',
+			'config'  => array(
+				'type' => 'select',
+				'foreign_table' => 'fe_users',
+				'foreign_class' => '\TYPO3\CMS\Extbase\Domain\Model\FrontendUser',
+				'maxitems' => 1
+			)
 		),
 	),
 );

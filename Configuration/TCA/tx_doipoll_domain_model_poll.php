@@ -23,10 +23,10 @@ return array(
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('doi_poll') . 'Resources/Public/Icons/tx_doipoll_domain_model_poll.gif'
 	),
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, contents, answers, voting',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, multiple, title, contents, answers, multiple, voting',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, contents, answers, voting, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden ;;1, title, contents, answers,multiple,  voting, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -115,6 +115,13 @@ return array(
 				),
 			),
 		),
+		'multiple' => array(
+			'exclude' => 1,
+			'label' => 'multiple',
+			'config' => array(
+				'type' => 'check',
+			),
+		),
 
 		'title' => array(
 			'exclude' => 1,
@@ -133,6 +140,7 @@ return array(
 				'renderType' => 'selectMultipleSideBySide',
 				'foreign_table' => 'tt_content',
 				'MM' => 'tx_doipoll_poll_content_mm',
+				'foreign_table_where' => 'and tt_content.poll = 1',
 				'size' => 10,
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
