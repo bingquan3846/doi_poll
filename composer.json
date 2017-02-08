@@ -1,0 +1,11 @@
+{
+	"repositories": [
+		{ "type": "composer", "url": "https://composer.typo3.org/" }
+	],
+	"name": "zerosones/doi_poll",
+	"description" : "Double option in. poll for typo3 cms system",
+	"license": "GPL-2.0+",
+	"require": {
+		"typo3/cms": "^7.6"
+	}
+}
